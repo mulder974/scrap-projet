@@ -8,7 +8,7 @@ def create_table_films():
     cur = con.cursor()
 
     cur.execute('''CREATE TABLE films
-                   (id int key, titre text, annee int, stars int, votes int, realisateur text, recettes int)''')
+                   (id int key, titre text, annee int, note int, votes int, realisateur text, recettes int)''')
 
     con.commit()
 
@@ -20,7 +20,7 @@ def create_table_acteurs():
     cur = con.cursor()
 
     cur.execute('''CREATE TABLE acteurs
-                   (id int primary key, trans text, symbol text, qty real, price real)''')
+                   (id int primary key, name text)''')
 
 
     con.commit()
@@ -42,4 +42,5 @@ def create_table_jointure_casting():
     #
     # con.close()
 
+create_table_films()
 create_table_acteurs()
